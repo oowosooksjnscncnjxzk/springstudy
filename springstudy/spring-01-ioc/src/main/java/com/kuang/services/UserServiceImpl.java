@@ -7,7 +7,12 @@ import com.kuang.dao.UserDaoOracleImpl;
 
 public class UserServiceImpl implements UserService {
     //private UseDao userDao=new UserDaoImpl();
-    private UseDao userDao=new UserDaoOracleImpl();
+    private UseDao userDao;
+
+    public void setUserDao(UseDao userDao) {
+        this.userDao = userDao;
+    }
+
     @Override
     public void getUser() {
         userDao.getUser();

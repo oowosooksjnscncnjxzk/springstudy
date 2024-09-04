@@ -5,6 +5,7 @@ public class mytest {
     public static void main(String[] args) {
         //用户实际调用的是业务层，不接触Dao层
         UserService userService = new UserServiceImpl();
+        //好
         userService.getUser();
     }
 }

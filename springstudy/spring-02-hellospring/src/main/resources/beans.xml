@@ -3,7 +3,22 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 		https://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!--使用spring来创建对象，初始化值 -->
+    <!--使用spring来创建对象，初始化值 ,这些对象都叫做Bean
+        类型  变量名=new 类型()
+        例如：
+        Hello hello = new Hello();
+        hello.setStr("kuangshen");
+
+        这里的hello就是一个Bean，它是Hello类的实例，并初始化了str属性为"kuangshen"
+
+        id=变量名，class=类型
+
+        propert相当与给对象的属性设置一个值
+
+        例如：
+        <bean id="hello" class="com.kuang.pojo.Hello">
+        </bean>
+    -->
     <bean id="hello" class="com.kuang.pojo.Hello">
             <property name="str" value="kuangshen"/>
     </bean>

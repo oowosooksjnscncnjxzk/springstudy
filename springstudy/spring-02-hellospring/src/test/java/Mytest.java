@@ -12,5 +12,7 @@ public class Mytest {
         Hello hello = (Hello) context.getBean("hello");
         System.out.println(hello);
 
+
+
     }
 }

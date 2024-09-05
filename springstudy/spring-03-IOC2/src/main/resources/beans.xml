@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    &lt;!&ndash; 下标赋值 &ndash;&gt;-->
+<!--    <bean id="user" class="com.cz.pojo.User">-->
+<!--        <constructor-arg index="0" value="陈倬"/>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;    不建议使用 &ndash;&gt;-->
+<!--    <bean id="user" class="com.cz.pojo.User">-->
+<!--        <constructor-arg type="java.lang.String" value="陈倬"/>-->
+<!--    </bean>-->
+
+    <!-- 直接使用参数名赋值  -->
+    <bean id="user" class="com.cz.pojo.User">
+        <constructor-arg name="name" value="陈倬"/>
+    </bean>
+
+    <!--
+     id: 唯一标识符
+     class: bean对象所对应的全限定名 包名+类型
+     name: bean对象的别名，可以用别名来取代id,可以同时取多个别名
+     -->
+    <bean id="userT" class="com.cz.pojo.userT" name="user2,u2">
+
+
+    </bean>
+
+
+    <!-- 别名  如果添加了别名，我们也可以用这个别名取配置对象-->
+    <alias name="user" alias="One"/>
+</beans>

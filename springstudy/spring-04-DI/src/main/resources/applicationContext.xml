@@ -1,0 +1,75 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="student" class="com.cz.pojo.Student">
+        <!--    无参注入 普通注入 直接使用value    -->
+        <property name="name" value="陈倬"/>
+        <!--     bean注入 ref   -->
+        <property name="address" ref="address"/>
+        <!--    数组注入-->
+        <property name="books">
+            <array>
+                <value>《Java编程思想》</value>
+                <value>《深入理解Java虚拟机》</value>
+                <value>《Spring实战》</value>
+            </array>
+        </property>
+        <!--    list注入-->
+
+        <property name="hobbies">
+            <list>
+                <value>篮球</value>
+                <value>足球</value>
+                <value>乒乓球</value>
+            </list>
+        </property>
+
+        <!--    map注入-->
+
+        <property name="scores">
+            <map>
+                <entry key="语文" value="80"/>
+                <entry key="数学" value="90"/>
+                <entry key="英语" value="85"/>
+            </map>
+        </property>
+
+        <!--    set注入-->
+        <property name="courses">
+            <set>
+                <value>JavaWeb</value>
+                <value>Spring</value>
+                <value>Hibernate</value>
+            </set>
+        </property>
+
+        <!--    空指针注入-->
+        <property name="wife">
+            <null/>
+        </property>
+
+        <!--    properties注入-->
+        <property name="properties">
+
+            <props>
+                <prop key="age">25</prop>
+                <prop key="gender">男</prop>
+            </props>
+        </property>
+
+    </bean>
+
+    <bean id="address" class="com.cz.pojo.Address">
+            <property name="address" value="北京"/>
+    </bean>
+
+
+
+
+
+
+</beans>

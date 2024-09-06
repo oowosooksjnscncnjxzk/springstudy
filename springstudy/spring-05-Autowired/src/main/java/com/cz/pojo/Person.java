@@ -1,35 +1,47 @@
 package com.cz.pojo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
+import org.springframework.lang.Nullable;
+import org.springframework.stereotype.Component;
+
 public class Person {
+    //如果显示定义了@Autowired的required属性为false,说明这个对象可以为null，否则不允许为空
+    @Autowired
+
     private Cat cat;
+
+    @Autowired
 
     private Dog dog;
 
     private String name;
 
+    public Person() {
+    }
+
+    public Person(@Nullable String name) {
+        this.name = name;
+    }
+
     public Cat getCat() {
         return cat;
     }
 
-    public void setCat(Cat cat) {
-        this.cat = cat;
-    }
+
 
     public Dog getDog() {
         return dog;
     }
 
-    public void setDog(Dog dog) {
-        this.dog = dog;
-    }
+
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+
 
     @Override
     public String toString() {
@@ -40,3 +52,5 @@ public class Person {
                 '}';
     }
 }
+
+

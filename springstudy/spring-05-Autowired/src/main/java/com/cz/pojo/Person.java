@@ -6,13 +6,15 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
+
 public class Person {
     //如果显示定义了@Autowired的required属性为false,说明这个对象可以为null，否则不允许为空
-    @Autowired
+    @Resource
 
     private Cat cat;
 
-    @Autowired
+    @Resource
 
     private Dog dog;
 

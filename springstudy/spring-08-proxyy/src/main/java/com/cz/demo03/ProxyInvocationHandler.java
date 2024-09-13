@@ -11,6 +11,7 @@ public class ProxyInvocationHandler implements InvocationHandler {
     //被代理的接口
     private Rent rent;
 
+
     public void setRent(Rent rent) {
         this.rent = rent;
     }

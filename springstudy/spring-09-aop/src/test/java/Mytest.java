@@ -7,6 +7,6 @@ public class Mytest {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         UserService service = (UserService) context.getBean("userServiceImpl");
         service.add();
-        System.out.println("Hello World!");
+
     }
 }

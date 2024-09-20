@@ -46,6 +46,16 @@
             <artifactId>spring-aop</artifactId>
             <version>5.2.0.RELEASE</version> <!-- 替换为你需要的版本 -->
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.2.0.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version> 1.9.7 </version> <!-- 请检查并使用最新版本 -->
+        </dependency>
 
 
 

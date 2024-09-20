@@ -1,6 +1,6 @@
 package com.cz.demo03;
 
-import com.cz.demo01.Rent;
+import com.cz.demo03.Rent;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -17,8 +17,15 @@ public class ProxyInvocationHandler implements InvocationHandler {
     }
 
     //生成得到代理类
+    //Proxy.newProxyInstance()方法的三个参数：
+    //参数一:用于指定那个类加载器，去加载生成的代理类
+    //参数二：指定接口，这些接口用于指定生成的代理长上面样，也就是有那些方法
+    //参数三: InvocationHandler接口的实现类，用于拦截方法调用并进行处理
+
     public Object getProxy(){
-        return Proxy.newProxyInstance(this.getClass().getClassLoader(), rent.getClass().getInterfaces(), this);
+        return Proxy.newProxyInstance(this.getClass().getClassLoader(),
+                rent.getClass().getInterfaces(),
+                this);
     }
 
     
@@ -26,7 +33,16 @@ public class ProxyInvocationHandler implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         //动态代理的本质，就是使用反射机制实现
+        seeHouse();
         Object result = method.invoke(rent, args);
-        return null;
+        fare();
+        return result;
+    }
+    private void seeHouse(){
+        System.out.println("看房子");
+    }
+
+    private void fare(){
+        System.out.println("交钱");
     }
 }

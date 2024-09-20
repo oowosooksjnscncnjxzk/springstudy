@@ -12,21 +12,18 @@
     <bean id="userServiceImpl" class="com.cz.service.UserServiceImpl"/>
     <bean id="Log" class="com.cz.log.Log"/>
     <bean id="After log" class="com.cz.log.Afterlog"/>
-    <!--  切面配置  -->
-    <!-- 方式一：使用原生SPring Api接口   -->
 
-    <aop:config>
-        <!--     切入点配置 expression表达式， execution(* com.cz.service.UserServiceImpl.*(..))表示切入所有UserServiceImpl类的所有方法， (..)表示任意参数   -->
-        <aop:pointcut id="pointcut" expression="execution(* com.cz.service.UserServiceImpl.*(..))"/>
-
-        <!--    执行环绕通知，在目标方法调用前后执行，可以对方法进行增强，并返回结果    -->
-        <aop:advisor advice-ref="Log" pointcut-ref="pointcut"/>
-        <aop:advisor advice-ref="After log" pointcut-ref="pointcut"/>
-
-    </aop:config>
-
-
-    <!--  开机注解的支持  -->
-    <context:annotation-config/>
+    <!--  指定要扫描的包，这个包下的注解就会生效  -->
+    <context:component-scan base-package="com.cz"/>
+    <!--  开启注解的支持  -->
     <aop:aspectj-autoproxy/>
 </beans>
+
+
+
+
+
+
+
+
+

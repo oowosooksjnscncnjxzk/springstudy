@@ -14,6 +14,6 @@ public class Afterlog implements AfterReturningAdvice {
 
     @Override
     public void afterReturning(Object returnvalue, Method method, Object[] args, Object target) throws Throwable {
-        System.out.println(method.getClass().getName()+"类中的"+method.getName()+"方法执行后返回值："+returnvalue);
+        System.out.println(target.getClass().getName()+"类中的"+method.getName()+"方法执行后返回值："+returnvalue);
     }
 }

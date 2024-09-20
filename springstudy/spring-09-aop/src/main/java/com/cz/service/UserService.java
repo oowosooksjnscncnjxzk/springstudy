@@ -5,5 +5,4 @@ public interface UserService {
     public void delete();
     public void update();
     public void query();
-
 }

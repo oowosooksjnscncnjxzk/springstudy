@@ -18,6 +18,7 @@ public class Mtest {
 //                courses=[JavaWeb, Spring, Hibernate],
 //        properties={age=25, gender=男}, wife='null'}
 
+
     }
     @Test
     public void test2(){

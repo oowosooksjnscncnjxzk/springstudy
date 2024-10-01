@@ -16,6 +16,7 @@
     <!-- 直接使用参数名赋值  -->
     <bean id="user" class="com.cz.pojo.User">
         <constructor-arg name="name" value="陈倬"/>
+
     </bean>
 
     <!--
@@ -24,6 +25,7 @@
      name: bean对象的别名，可以用别名来取代id,可以同时取多个别名
      -->
     <bean id="userT" class="com.cz.pojo.userT" name="user2,u2">
+
 
 
     </bean>

@@ -1,8 +1,13 @@
 package com.cz.pojo;
 
 public class User {
+    public User() {
+        System.out.println("User constructor");
+    }
+
     public User(String name) {
        this.name = name;
+        System.out.println("User constructor with name");
     }
 
     private String name;
